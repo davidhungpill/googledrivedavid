@@ -20,7 +20,7 @@ spring:
         - id: video processing
           uri: http://localhost:8084
           predicates:
-            - Path=/vedioStremings/**, 
+            - Path=/videoStremings/**, 
         - id: notification
           uri: http://localhost:8085
           predicates:
@@ -64,7 +64,7 @@ spring:
         - id: video processing
           uri: http://videoProcessing:8080
           predicates:
-            - Path=/vedioStremings/**, 
+            - Path=/videoStremings/**, 
         - id: notification
           uri: http://notification:8080
           predicates:

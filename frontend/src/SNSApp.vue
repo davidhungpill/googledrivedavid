@@ -69,13 +69,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key="vedioStremings"
-                        to="/videoProcessings/vedioStremings"
+                        key="videoStremings"
+                        to="/videoProcessings/videoStremings"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        VedioStreming
+                        VideoStreming
                     </v-list-item>
 
 
@@ -185,10 +185,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: 'VedioStreming', 
+                title: 'VideoStreming', 
                 description: '', 
-                key: 'vedioStremings', 
-                route: '/videoProcessings/vedioStremings',
+                key: 'videoStremings', 
+                route: '/videoProcessings/videoStremings',
                 ImageUrl: '',
             },
             { 

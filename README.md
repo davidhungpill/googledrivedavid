@@ -44,7 +44,7 @@ mvn spring-boot:run
 ```
 - video processing
 ```
- http :8088/vedioStremings id="id" fileName="fileName" vedioStreamingUrl="vedioStreamingUrl" 
+ http :8088/videoStremings id="id" fileName="fileName" videoStreamingUrl="videoStreamingUrl" 
 ```
 - notification
 ```

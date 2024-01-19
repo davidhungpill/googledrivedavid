@@ -18,9 +18,27 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler {
 
     @Autowired
-    VedioStremingRepository vedioStremingRepository;
+    VideoStremingRepository videoStremingRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='FileUploaded'"
+    )
+    public void wheneverFileUploaded_IfFileIsVideoRequestStreamProcess(
+        @Payload FileUploaded fileUploaded
+    ) {
+        FileUploaded event = fileUploaded;
+        System.out.println(
+            "\n\n##### listener IfFileIsVideoRequestStreamProcess : " +
+            fileUploaded +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        VideoStreming.ifFileIsVideoRequestStreamProcess(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

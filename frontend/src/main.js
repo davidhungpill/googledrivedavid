@@ -49,7 +49,7 @@ pluralCaseList.push( {plural: "drives/files", pascal: "DriveFile"} )
 
 pluralCaseList.push( {plural: "indexers/fileIndices", pascal: "IndexerFileIndex"} )
 
-pluralCaseList.push( {plural: "videoProcessings/vedioStremings", pascal: "VideoProcessingVedioStreming"} )
+pluralCaseList.push( {plural: "videoProcessings/videoStremings", pascal: "VideoProcessingVideoStreming"} )
 
 pluralCaseList.push( {plural: "notifications/messages", pascal: "NotificationMessage"} )
 

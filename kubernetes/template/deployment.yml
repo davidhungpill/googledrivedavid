@@ -27,7 +27,7 @@ spec:
                      name: indexer
                      port:
                        number: 8080
-               - path: /vedioStremings
+               - path: /videoStremings
                  pathType: Prefix
                  backend:
                    service:

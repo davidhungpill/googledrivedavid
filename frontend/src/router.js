@@ -11,8 +11,8 @@ import DriveFileDetail from "./components/listers/DriveFileDetail"
 import IndexerFileIndexManager from "./components/listers/IndexerFileIndexCards"
 import IndexerFileIndexDetail from "./components/listers/IndexerFileIndexDetail"
 
-import VideoProcessingVedioStremingManager from "./components/listers/VideoProcessingVedioStremingCards"
-import VideoProcessingVedioStremingDetail from "./components/listers/VideoProcessingVedioStremingDetail"
+import VideoProcessingVideoStremingManager from "./components/listers/VideoProcessingVideoStremingCards"
+import VideoProcessingVideoStremingDetail from "./components/listers/VideoProcessingVideoStremingDetail"
 
 import NotificationMessageManager from "./components/listers/NotificationMessageCards"
 import NotificationMessageDetail from "./components/listers/NotificationMessageDetail"
@@ -46,14 +46,14 @@ export default new Router({
             },
 
             {
-                path: '/videoProcessings/vedioStremings',
-                name: 'VideoProcessingVedioStremingManager',
-                component: VideoProcessingVedioStremingManager
+                path: '/videoProcessings/videoStremings',
+                name: 'VideoProcessingVideoStremingManager',
+                component: VideoProcessingVideoStremingManager
             },
             {
-                path: '/videoProcessings/vedioStremings/:id',
-                name: 'VideoProcessingVedioStremingDetail',
-                component: VideoProcessingVedioStremingDetail
+                path: '/videoProcessings/videoStremings/:id',
+                name: 'VideoProcessingVideoStremingDetail',
+                component: VideoProcessingVideoStremingDetail
             },
 
             {
