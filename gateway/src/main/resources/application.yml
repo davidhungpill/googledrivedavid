@@ -1,0 +1,92 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8090/.well-known/jwks.json
+  cloud:
+    gateway:
+      routes:
+         - id: drive
+           uri: http://localhost:8082
+           predicates:
+            - Path=/files/** /selectFiles/**
+         - id: indexer
+           uri: http://localhost:8083
+           predicates:
+            - Path=/fileIndices/** 
+         - id: video processing
+           uri: http://localhost:8084
+           predicates:
+            - Path=/vedioStremings/** 
+         - id: notification
+           uri: http://localhost:8085
+           predicates:
+            - Path=/messages/** 
+         - id: dashboard
+           uri: http://localhost:8086
+           predicates:
+            - Path= /displayDashboards/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://oauth:8080/.well-known/jwks.json
+  cloud:
+    gateway:
+      routes:
+        - id: drive
+          uri: http://drive:8080
+          predicates:
+            - Path=/files/** /selectFiles/**
+        - id: indexer
+          uri: http://indexer:8080
+          predicates:
+            - Path=/fileIndices/** 
+        - id: video processing
+          uri: http://video processing:8080
+          predicates:
+            - Path=/vedioStremings/** 
+        - id: notification
+          uri: http://notification:8080
+          predicates:
+            - Path=/messages/** 
+        - id: dashboard
+          uri: http://dashboard:8080
+          predicates:
+            - Path= /displayDashboards/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
